@@ -1,7 +1,7 @@
 from turtle import Turtle
 
 
-class Boundry(Turtle):
+class Boundary(Turtle):
 
     def __init__(self):
         super().__init__()

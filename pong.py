@@ -11,12 +11,11 @@ class Pong(Turtle):
         self.penup()
         self.shape("circle")
         self.color("white")
-        self.setpos(0, 0)
         self.start_ball()
 
     def start_ball(self):
+        self.setpos(0, 0)
         self.setheading(random.choice(ANGLES))
 
     def move_ball(self):
         self.forward(5)
-

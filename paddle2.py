@@ -1,28 +1,20 @@
 from turtle import Turtle
 
-Y_POSITIONS = [-30, -10, 10, 30]
 
+class Paddle2(Turtle):
 
-class Paddle2:
     def __init__(self):
-        self.segments = []
-        self.create_paddle()
-
-    def create_paddle(self):
-        for position in Y_POSITIONS:
-            t = Turtle()
-            t.penup()
-            t.shape("square")
-            t.color("white")
-            t.setpos(380, position)
-            self.segments.append(t)
+        super().__init__()
+        self.penup()
+        self.shape("square")
+        self.color("white")
+        self.setpos(380, 0)
+        self.shapesize(stretch_wid=5, stretch_len=1)
 
     def up(self):
-        for segment in self.segments:
-            segment.setheading(90)
-            segment.forward(10)
+        new_y = self.ycor() + 20
+        self.goto(self.xcor(), new_y)
 
     def down(self):
-        for segment in self.segments:
-            segment.setheading(270)
-            segment.forward(10)
+        new_y = self.ycor() - 20
+        self.goto(self.xcor(), new_y)
